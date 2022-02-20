@@ -1,0 +1,51 @@
+<!-- inspired from https://codepen.io/siremilomir/pen/jBbQGo -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Upload</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/upload.css')}}" />
+	
+</head>
+<body>
+
+	<!-- Inspired from https://codepen.io/Fibonaccifreak/pen/GRZpqdg -->
+<!-- 	<header>
+		<a href="{{ url_for('index') }}"> <img src="{{ url_for('static', filename='img/img3.png') }}" id="logo"> </a>    
+     <nav>
+     	<a href="{{ url_for('home') }}"> <i class="fas fa-home"></i> </a>
+     	<a href="{{ url_for('upload') }}"> <i class="fas fa-upload"></i> </a>
+        <a href="{{ url_for('index') }}"><i class="fas fa-map-marker-alt"></i> </a>
+        <div id="user">
+            <img src="https://images.unsplash.com/profile-fb-1535725706-502eab0fee8e.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128">
+        </div>
+    </nav>
+
+</header> -->
+
+<!-- {% for i in range(27) %}
+<br>
+{% endfor %} -->
+
+<div class="checkout">
+  <div class="upload-box">
+    <div class="preview-box" id="imagePreview">
+      <img src="" alt="Image Preview" class="image-preview__image">
+      <span class="image-preview__default-text">Image Preview</span>      
+    </div>
+  </div>
+  <form class="form" autocomplete="off" novalidate method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="input-file" id="input-file">
+    <fieldset>
+      <label for="caption">Comment</label>
+      <input type="text" id="caption" name="caption" />
+    </fieldset>
+    <button class="btn"><i class="fa fa-lock"></i> submit</button>
+  </form>
+</div>
+
+</body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</html>
